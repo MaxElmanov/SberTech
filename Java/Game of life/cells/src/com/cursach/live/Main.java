@@ -7,9 +7,9 @@ public class Main extends JFrame {
     public Main() {
         setTitle("Cells");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setSize(450, 450);
+        setSize(475, 490);
         setLocation(500, 500);
-        add(new GameFiled());
+        add(new GameFiled(this));
         setVisible(true);
     }
 
