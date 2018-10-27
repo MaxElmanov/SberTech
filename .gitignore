@@ -1,5 +1,11 @@
 .git/
 .gitignore
-Java/Game of life/cells/out
-Java/Game of life/cells/.idea
-Java/Game of life/cells/*.iml
+*/*/*/out
+*/*/*/.idea
+*/*/*/*.iml
+*/*/out
+*/*/.idea
+*/*/*.iml
+*/out
+*/.idea
+*/*.iml
