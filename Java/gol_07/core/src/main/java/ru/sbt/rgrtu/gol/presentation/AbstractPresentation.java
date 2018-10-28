@@ -2,7 +2,7 @@ package ru.sbt.rgrtu.gol.presentation;
 
 import ru.sbt.rgrtu.gol.game.Gol;
 
-public class AbstractPresentation {
+public class AbstractPresentation implements Presentation{
 
     private Gol gol;
 
@@ -21,4 +21,7 @@ public class AbstractPresentation {
         }
         System.out.println(out);
     }
+
+    @Override
+    public void show() { }
 }

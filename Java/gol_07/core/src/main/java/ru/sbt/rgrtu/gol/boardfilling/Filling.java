@@ -5,5 +5,5 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
 public interface Filling {
-    boolean[][] fillBoard(long seed, int sizeX, int sizeY) throws IOException;
+    boolean[][] fillBoard(int sizeX, int sizeY) throws IOException;
 }

@@ -8,7 +8,7 @@ public class TxtFilling implements Filling {
     private final char deadSymbol = ' ';
 
     @Override
-    public boolean[][] fillBoard(long seed, int sizeX, int sizeY) throws IOException {
+    public boolean[][] fillBoard(int sizeX, int sizeY) throws IOException {
         File file = new File("text.txt");
       //  BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream("text.txt"), "UTF-8"));
         boolean[][] current = new boolean[sizeX][sizeY];

@@ -1,5 +1,9 @@
 package ru.sbt.rgrtu.gol.web;
 
+import ru.sbt.rgrtu.gol.boardfilling.BitmapFilling;
+import ru.sbt.rgrtu.gol.boardfilling.Filling;
+import ru.sbt.rgrtu.gol.boardfilling.RandomFilling;
+import ru.sbt.rgrtu.gol.boardfilling.TxtFilling;
 import ru.sbt.rgrtu.gol.config.ConfigurationPropertiesLoader;
 import ru.sbt.rgrtu.gol.config.ConfigurationProvider;
 import ru.sbt.rgrtu.gol.game.Gol;
@@ -14,17 +18,20 @@ import java.io.IOException;
 public class GolServlet extends HttpServlet {
 
     private Gol gol;
+    private Filling fill;
     private HtmlPresentation presentation;
 
     @Override
     public synchronized void init() throws ServletException {
         super.init();
-        initGol();
+        try { initGol(); }
+        catch (IOException e) { e.printStackTrace(); }
     }
 
-    private void initGol() {
+    private void initGol() throws IOException {
         ConfigurationProvider cpl = new ConfigurationPropertiesLoader("config.properties");
-        Gol gol = new Gol(cpl);
+        fill = new BitmapFilling();
+        Gol gol = new Gol(cpl, fill);
         gol.init();
         Presentation presentation = new HtmlPresentation(gol, true);
 

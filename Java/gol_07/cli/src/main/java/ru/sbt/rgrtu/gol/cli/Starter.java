@@ -1,5 +1,6 @@
 package ru.sbt.rgrtu.gol.cli;
 
+import ru.sbt.rgrtu.gol.boardfilling.BitmapFilling;
 import ru.sbt.rgrtu.gol.boardfilling.Filling;
 import ru.sbt.rgrtu.gol.boardfilling.RandomFilling;
 import ru.sbt.rgrtu.gol.boardfilling.TxtFilling;
@@ -20,12 +21,13 @@ import java.io.IOException;
 public class Starter {
 
     public static void main(String[] args) throws IOException {
-       ConfigurationProvider cpl = createHardCodedConfigurationProvider();
-//      ConfigurationProvider cpl = createInlineConfigurationProvider();
+  //     ConfigurationProvider cpl = createHardCodedConfigurationProvider();
+     ConfigurationProvider cpl = createInlineConfigurationProvider();
    //     ConfigurationProvider cpl = createConfigurationPropertiesLoader();
 
-        Filling fill = new TxtFilling();
+       // Filling fill = new TxtFilling();
         //Filling fill = new RandomFilling();
+        Filling fill = new BitmapFilling();
         Gol gol = new Gol(cpl, fill);
 //        Presentation presentation = new AtAndSpacePresentation(gol);
         Presentation presentation = new SmilePresentation(gol);

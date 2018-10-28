@@ -11,7 +11,7 @@ public class HardCodedConfigurationProvider implements ConfigurationProvider {
         configuration.setSeed(20180921L);
         configuration.setSizeX(150);
         configuration.setSizeY(100);
-        configuration.setSpeed(10);
+        configuration.setSpeed(500);
         return configuration;
     }
 }

@@ -79,7 +79,7 @@ public class Gol {
         current = createGeneration();
         next = createGeneration();
 
-        current = fill.fillBoard(this.seed, this.sizeX, this.sizeY);
+        current = fill.fillBoard(this.sizeX, this.sizeY);
     }
 
     public void nextStep() {

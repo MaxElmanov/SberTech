@@ -3,8 +3,14 @@ package ru.sbt.rgrtu.gol.boardfilling;
 import java.util.Random;
 
 public class RandomFilling implements Filling {
+    private long seed;
+
+    public RandomFilling(long seed) {
+        this.seed = seed;
+    }
+
     @Override
-    public boolean[][] fillBoard(long seed, int sizeX, int sizeY) {
+    public boolean[][] fillBoard(int sizeX, int sizeY) {
         boolean[][] current = new boolean[sizeX][sizeY];
         Random random = new Random(seed);
 

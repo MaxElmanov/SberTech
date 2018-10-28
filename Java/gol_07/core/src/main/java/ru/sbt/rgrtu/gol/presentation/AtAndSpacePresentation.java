@@ -2,7 +2,7 @@ package ru.sbt.rgrtu.gol.presentation;
 
 import ru.sbt.rgrtu.gol.game.Gol;
 
-public class AtAndSpacePresentation extends AbstractPresentation implements Presentation {
+public abstract class AtAndSpacePresentation extends AbstractPresentation implements Presentation {
 
     //private final Gol gol;
 

@@ -24,7 +24,7 @@ public class HtmlPresentation implements Presentation {
         "</body>\n" +
     "</html>"
     ;
-    private static final String RELOAD =
+    private final String RELOAD =
     "<script type=\"text/javascript\">\n" +
             "window.onload=function(){setTimeout(function() { location.reload(true); }, 500);};" +
     "</script>\n"
@@ -49,7 +49,7 @@ public class HtmlPresentation implements Presentation {
     "<td class=\"dead\"></td>"
     ;
 
-    private final Gol gol;
+    private static Gol gol;
     private final boolean reload;
 
     private HttpServletResponse response;
