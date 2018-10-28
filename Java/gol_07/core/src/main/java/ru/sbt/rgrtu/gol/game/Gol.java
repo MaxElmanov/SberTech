@@ -19,15 +19,12 @@ public class Gol {
     private final ConfigurationProvider configurationProvider;
     private final Filling fill;
 
-    private long seed;
     private int sizeX;
     private int sizeY;
 
     private boolean[][] current;
     private boolean[][] next;
     private long generation;
-
-    private int speed;
 
     private boolean[][] createGeneration() {
         return new boolean[sizeX][sizeY];
@@ -40,10 +37,6 @@ public class Gol {
     public Gol(ConfigurationProvider configurationProvider, Filling fill) {
         this.configurationProvider = configurationProvider;
         this.fill = fill;
-    }
-
-    public int getSpeed() {
-        return speed;
     }
 
     public int getSizeX() {
@@ -71,10 +64,8 @@ public class Gol {
 
     public void init() throws IOException {
         Configuration configuration = configurationProvider.getConfiguration();
-        this.seed = configuration.getSeed();
         this.sizeX = configuration.getSizeX();
         this.sizeY = configuration.getSizeY();
-        this.speed = configuration.getSpeed();
 
         current = createGeneration();
         next = createGeneration();

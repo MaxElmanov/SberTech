@@ -14,10 +14,12 @@ public class TimedController implements Controller {
     private final Gol gol;
     private final Presentation presentation;
     private volatile boolean stopped;
+    private int speed;
 
-    public TimedController(Gol gol, Presentation presentation) {
+    public TimedController(Gol gol, Presentation presentation, int speed) {
         this.gol = gol;
         this.presentation = presentation;
+        this.speed = speed;
     }
 
     @Override
@@ -30,7 +32,7 @@ public class TimedController implements Controller {
             presentation.show();
 
             try {
-                Thread.sleep(gol.getSpeed());
+                Thread.sleep(speed);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

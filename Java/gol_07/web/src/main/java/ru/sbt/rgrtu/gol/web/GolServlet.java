@@ -30,7 +30,7 @@ public class GolServlet extends HttpServlet {
 
     private void initGol() throws IOException {
         ConfigurationProvider cpl = new ConfigurationPropertiesLoader("config.properties");
-        fill = new BitmapFilling();
+        fill = new BitmapFilling("bitmap.bmp");
         Gol gol = new Gol(cpl, fill);
         gol.init();
         Presentation presentation = new HtmlPresentation(gol, true);

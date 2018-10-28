@@ -21,20 +21,20 @@ import java.io.IOException;
 public class Starter {
 
     public static void main(String[] args) throws IOException {
-  //     ConfigurationProvider cpl = createHardCodedConfigurationProvider();
-     ConfigurationProvider cpl = createInlineConfigurationProvider();
-   //     ConfigurationProvider cpl = createConfigurationPropertiesLoader();
+        //ConfigurationProvider cpl = createHardCodedConfigurationProvider();
+        //ConfigurationProvider cpl = createInlineConfigurationProvider();
+        ConfigurationProvider cpl = createConfigurationPropertiesLoader();
 
-       // Filling fill = new TxtFilling();
-        //Filling fill = new RandomFilling();
-        Filling fill = new BitmapFilling();
+        //Filling fill = new TxtFilling();
+        //Filling fill = new RandomFilling(20180921);
+        Filling fill = new BitmapFilling("bitmap.bmp");
         Gol gol = new Gol(cpl, fill);
-//        Presentation presentation = new AtAndSpacePresentation(gol);
+        //Presentation presentation = new AtAndSpacePresentation(gol);
         Presentation presentation = new SmilePresentation(gol);
-//        Presentation presentation = new ColoredPresentation(gol);
+        //Presentation presentation = new ColoredPresentation(gol);
 
- //       Controller controller = new FrameByFrameController(gol, presentation);
-      Controller controller = new TimedController(gol, presentation);
+        //Controller controller = new FrameByFrameController(gol, presentation);
+        Controller controller = new TimedController(gol, presentation, 100);
         controller.run();
     }
 
@@ -49,7 +49,6 @@ public class Starter {
     private static ConfigurationProvider createInlineConfigurationProvider() {
         return () -> {
             Configuration configuration = new Configuration();
-            configuration.setSeed(20180921L);
             configuration.setSizeX(150);
             configuration.setSizeY(100);
             configuration.setSpeed(1000);

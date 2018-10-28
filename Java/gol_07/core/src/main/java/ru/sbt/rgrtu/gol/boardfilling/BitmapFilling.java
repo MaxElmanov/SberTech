@@ -2,11 +2,15 @@ package ru.sbt.rgrtu.gol.boardfilling;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 public class BitmapFilling implements Filling{
+
+    private String file;
+
+    public BitmapFilling(String file) {
+        this.file= file;
+    }
 
     @Override
     public boolean[][] fillBoard(int sizeX, int sizeY) throws IOException {
@@ -14,9 +18,19 @@ public class BitmapFilling implements Filling{
         boolean[][] current = new boolean[sizeX][sizeY];
 
         try{
-            File originalImage = new File("bitmap.bmp");
+            FileInputStream fis = new FileInputStream(String.valueOf(getClass().getClassLoader().getResource(file)));
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            int reads;
+            while((reads = fis.read()) != -1) {
+                baos.write(reads);
+            }
+            imageInByte = baos.toByteArray();
+
+            // these two rows are nesseccury for imageInByte.length; (47)
+            File originalImage = new File(String.valueOf(getClass().getClassLoader().getResource(file)));
             BufferedImage imgBuffer = ImageIO.read(originalImage);
-            imageInByte = (byte[])imgBuffer.getRaster().getDataElements(0, 0, imgBuffer.getWidth(), imgBuffer.getHeight(), null);
+//            imageInByte = (byte[])imgBuffer.getRaster().getDataElements(0, 0, imgBuffer.getWidth(), imgBuffer.getHeight(), null);
+
             System.out.println(imageInByte.length);
 
             for (int k = 0; k < current.length; k++) {
@@ -31,7 +45,7 @@ public class BitmapFilling implements Filling{
                     i++;
                     j = 0;
                 }
-                
+
                 if (imageInByte[k] == 0) {  //r == black
                     current[i][j] = true;
                 }

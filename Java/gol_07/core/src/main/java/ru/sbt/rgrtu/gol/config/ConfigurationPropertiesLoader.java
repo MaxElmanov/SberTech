@@ -45,8 +45,8 @@ public class ConfigurationPropertiesLoader implements ConfigurationProvider {
         Configuration configuration = new Configuration();
         configuration.setSizeX(Integer.parseInt(properties.getProperty("game.board.size.x")));
         configuration.setSizeY(Integer.parseInt(properties.getProperty("game.board.size.y")));
-        configuration.setSeed(Long.parseLong(properties.getProperty("game.seed")));
-        configuration.setSpeed(Integer.parseInt(properties.getProperty("game.speed.ms")));
+//        configuration.setSeed(Long.parseLong(properties.getProperty("game.seed")));
+//        configuration.setSpeed(Integer.parseInt(properties.getProperty("game.speed.ms")));
         return configuration;
     }
 }
