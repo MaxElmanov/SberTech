@@ -17,18 +17,45 @@ public class HtmlPresentation implements Presentation {
                 ".alive {background-color: green;}\n" +
                 ".dead {background-color: black;}\n" +
             "</style>\n" +
-        "%1$s\n" +
+            "<script type=\"text/javascript\">\n" +
+                "window.onload=function(){" +
+                    "%1$s\n" +
+                    "%2$s\n" +
+                "};" +
+            "</script>\n" +
         "</head>\n" +
         "<body>\n" +
-            "%2$s%3$s\n" +
+            "%3$s%4$s\n" +
+            "<input id=\"stopbutton\"type=\"button\" value=\"STOP\">" +
         "</body>\n" +
     "</html>"
     ;
-    private final String RELOAD =
-    "<script type=\"text/javascript\">\n" +
-            "window.onload=function(){setTimeout(function() { location.reload(true); }, 500);};" +
-    "</script>\n"
-    ;
+    private final String RELOAD = "timeoutId = setTimeout(function() { stopBtn.value = \"STOP\"; " +
+            "location.reload(true);" +
+            "}, 500);\n";
+
+    private final String STOP_BUTTON_JS =
+            "var isStopped = false;\n" +
+            "var valueStopBtn = \"STOP\";" +
+            "var stopBtn = document.getElementById(\"stopbutton\");\n" +
+            "valueStopBtn = \"STOP\";" +
+            "stopBtn.onclick = function (){\n" +
+            "if(isStopped) {\n" +
+                "timeoutId = setTimeout(function() { location.reload(true)} , 500);\n" +
+                "console.log(\"start\");\n" +
+                "isStopped = false;\n" +
+                "valueStopBtn = \"STOP\";\n" +
+                "stopBtn.value = valueStopBtn;\n" +
+            "}\n" +
+            "else {\n" +
+                "clearTimeout(timeoutId);\n" +
+                " console.log(\"stop\");\n"  +
+                "isStopped = true; \n" +
+                "valueStopBtn = \"START\";\n" +
+                "stopBtn.value = valueStopBtn;\n" +
+                "}\n" +
+            "};\n" ;
+
     private static final String HEADER_TEMPLATE =
     "<h1>Generation: %1$05d</h1>"
     ;
@@ -81,7 +108,7 @@ public class HtmlPresentation implements Presentation {
         }
         String board = String.format(BOARD_TEMPLATE, rows);
 
-        String out = String.format(PAGE_TEMPLATE, (reload ? RELOAD : ""), header, board);
+        String out = String.format(PAGE_TEMPLATE, (reload ? RELOAD : ""), STOP_BUTTON_JS,  header, board);
         try {
             response.setContentType("text/html");
             response.getWriter().write(out);

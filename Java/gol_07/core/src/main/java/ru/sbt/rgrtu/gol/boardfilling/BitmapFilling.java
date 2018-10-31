@@ -18,20 +18,20 @@ public class BitmapFilling implements Filling{
         boolean[][] current = new boolean[sizeX][sizeY];
 
         try{
-            FileInputStream fis = new FileInputStream(String.valueOf(getClass().getClassLoader().getResource(file)));
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(Thread.currentThread().getContextClassLoader().getResourceAsStream(file), "UTF-8"));
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            int reads;
-            while((reads = fis.read()) != -1) {
-                baos.write(reads);
-            }
-            imageInByte = baos.toByteArray();
+//            int reads;
+//            while((reads = br.read()) != -1) {
+//                baos.write(reads);
+//            }
+//            imageInByte = baos.toByteArray();
 
             // these two rows are nesseccury for imageInByte.length; (47)
-            File originalImage = new File(String.valueOf(getClass().getClassLoader().getResource(file)));
-            BufferedImage imgBuffer = ImageIO.read(originalImage);
+//            File originalImage = new File(String.valueOf(getClass().getClassLoader().getResource(file)));
+//            BufferedImage imgBuffer = ImageIO.read(originalImage);
 //            imageInByte = (byte[])imgBuffer.getRaster().getDataElements(0, 0, imgBuffer.getWidth(), imgBuffer.getHeight(), null);
 
-            System.out.println(imageInByte.length);
+            //System.out.println(imageInByte.length);
 
             for (int k = 0; k < current.length; k++) {
                 for (int p = 0; p < current[k].length; p++) {
@@ -39,18 +39,34 @@ public class BitmapFilling implements Filling{
                 }
             }
 
-            int i = 0,j = 0;
-            for (int k = 0; k < imageInByte.length; k++) {
-                if(j == imgBuffer.getWidth()) {
-                    i++;
-                    j = 0;
-                }
+            //System.out.println(bufferedReader.readLine());
 
-                if (imageInByte[k] == 0) {  //r == black
-                    current[i][j] = true;
+            String line;
+            int k=0;
+            while((line = bufferedReader.readLine()) != null) {
+
+                for (int p = 0; p < line.length(); p++) {
+
+                    if (line.charAt(p) == '0'){
+                        current[k][p] = true;
+                    }
                 }
-                j++;
+                k++;
             }
+
+
+//            int i = 0,j = 0;
+//            for (int k = 0; k < imageInByte.length; k++) {
+//                if(j == imgBuffer.getWidth()) {
+//                    i++;
+//                    j = 0;
+//                }
+//
+//                if (imageInByte[k] == 0) {  //r == black
+//                    current[i][j] = true;
+//                }
+//                j++;
+//            }
         }
         catch(IOException e){
             System.out.println(e.getMessage());
