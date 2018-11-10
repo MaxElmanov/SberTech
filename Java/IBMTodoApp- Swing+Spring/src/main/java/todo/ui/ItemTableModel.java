@@ -1,5 +1,6 @@
 package todo.ui;
 
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
 @Component
-public class ItemTableModel extends AbstractTableModel {
+public class ItemTableModel extends AbstractTableModel implements InitializingBean {
 
 	private List itemList;
 
@@ -35,5 +36,11 @@ public class ItemTableModel extends AbstractTableModel {
 
 	public String getColumnName(int column) {
 		return "Items";
+	}
+
+	public void afterPropertiesSet() throws Exception {
+		for (int i = 0; i < 3; i++){
+			itemList.add(i+1);
+		}
 	}
 }
