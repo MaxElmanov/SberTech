@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" 
-          "http://www.springframework.org/dtd/spring-beans.dtd">
-<beans>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<context:component-scan base-package="todo"/>
 
 	<!--<bean id="mainFrame" class="todo.ui.MainFrame" init-method="init">-->
 		<!--<property name="contentPane">-->
@@ -83,37 +86,37 @@
 	<!--</bean>-->
 
 
-	<bean id="deleteButtonActionListener" class="todo.ui.button.DeleteButtonActionListener">
-		<property name="list">
-			<ref bean="itemList" />
-		</property>
-		<property name="table">
-			<ref bean="itemTable" />
-		</property>
-	</bean>
+	<!--<bean id="deleteButtonActionListener" class="todo.ui.button.DeleteButtonActionListener">-->
+		<!--<property name="list">-->
+			<!--<ref bean="itemList" />-->
+		<!--</property>-->
+		<!--<property name="table">-->
+			<!--<ref bean="itemTable" />-->
+		<!--</property>-->
+	<!--</bean>-->
 
 
 
 
-	<bean id="addNewButton" class="todo.ui.button.ActionListenerButton"
-		init-method="init">
-		<property name="actionListener">
-			<ref bean="addNewButtonActionListener" />
-		</property>
-		<property name="text">
-			<value>Add New</value>
-		</property>
-	</bean>
+	<!--<bean id="addNewButton" class="todo.ui.button.ActionListenerButton"-->
+		<!--init-method="init">-->
+		<!--<property name="actionListener">-->
+			<!--<ref bean="addNewButtonActionListener" />-->
+		<!--</property>-->
+		<!--<property name="text">-->
+			<!--<value>Add New</value>-->
+		<!--</property>-->
+	<!--</bean>-->
 
 
-	<bean id="addNewButtonActionListener" class="todo.ui.button.AddNewButtonActionListener">
-		<property name="list">
-			<ref bean="itemList" />
-		</property>
-		<property name="table">
-			<ref bean="itemTable" />
-		</property>
-	</bean>
+	<!--<bean id="addNewButtonActionListener" class="todo.ui.button.AddNewButtonActionListener">-->
+		<!--<property name="list">-->
+			<!--<ref bean="itemList" />-->
+		<!--</property>-->
+		<!--<property name="table">-->
+			<!--<ref bean="itemTable" />-->
+		<!--</property>-->
+	<!--</bean>-->
 
 
 
