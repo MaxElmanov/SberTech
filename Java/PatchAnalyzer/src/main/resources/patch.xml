@@ -1,0 +1,2323 @@
+<config>
+	<rfc version="SP-32.000.15" jiraid="ESBKF-6066">
+		<!--Добавление полей ответа, запроса. АС Стоплист. ECH, TSM-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.14" jiraid="ESBKF-6570">
+		<!--Предоставление прав ТУЗ dynatraceusr-->
+		<system>
+			<tag>TSM_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-32.000.13" jiraid="ESBKF-6574">
+		<!--Создание канала и очереди. Запрос из ОКР в WAY4/ППРБ-->
+		<applications>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>PPRB_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-32.000.12" jiraid="ESBKF-6111">
+		<!--Реализация услуги "Пропуск 1-ого платежа"-->
+		<applications>
+			<application>UKO_InitiateConsumerProductOffer</application>
+			<application>UKO_NotifyConsumerProductOfferResult</application>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.11" jiraid="ESBKF-6169">
+		<!--Агрегатор POS-кредитов взаимодействие с Сетелем-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.10" jiraid="ESBKF-6369">
+		<!--Доработка мапинга сервисов UKO_ApplicationForConsumerProduct,UKO_UpdateApplicationStatus  в рамках задачи ESBKF-6369-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+			<application>UKO_UpdateApplicationStatus</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.09" jiraid="ESBKF-6116">
+		<!--Изменения атрибутивного состава заявления-офферты и ссуды-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.08" jiraid="ESBKF-5905">
+		<!--SrvTransApprovedApplicationInfo Передача из СБОФ в ЕКС заявки по технологии кредитный конвейер-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.07" jiraid="ESBKF-6272">
+		<!--Доработка мапинга сервиса UKO_UpdateApplicationStatus-->
+		<applications>
+			<application>UKO_UpdateApplicationStatus</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.06" jiraid="ESBKF-6053">
+		<!--SLR_SrvGetAccountSalaryAmount USVBO Json-->
+		<applications>
+			<application>SLR_SrvGetAccountSalaryAmount</application>
+			<application>USVBO_RestRequestAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.05" jiraid="ESBKF-6039">
+		<!--Расширение сервисов Антифрод на КСШ для Кредитного Потенциала-->
+		<applications>
+			<application>GFS_SrvGetFraudScore</application>
+			<application>MMZ_SrvCheckRetailApplicationForSocialFraud</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.04" jiraid="ESBKF-6077">
+		<!--Расширяется атрибутный состав сообщения запроса от ETSM Ret в ЕКП-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.03" jiraid="ESBKF-6071">
+		<!--Расширение формата ответа от ОКР в Транзакт в RRE (Кефир). Сервис SrvGetClientExtendedRate-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.02" jiraid="ESBKF-6083">
+		<!--Доработка сервиса SrvTransApprovedApplicationInfo. Передача нового блока BATCH_Type/loanContract/RelatedParticipant-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.01" jiraid="ESBKF-6045">
+		<!--Подключение ЕКП.Агрегатора к SrvUpdateApplicationForConsumerProductStatus-->
+		<applications>
+			<application>UKO_UpdateApplicationStatus</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>UCP_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-31.000.15" jiraid="ESBKF-5967">
+		<!--Добавленая очередь для запросов в ETSM Ret-->
+		<applications>
+			<application>UKO_SrvSearchApplicationForConsumerProduct</application>
+		</applications>
+		<system>
+			<tag>TSM_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-31.000.14" jiraid="ESBKF-6142">
+		<!--Расширяется атрибутный состав сообщения запроса от ЕФС в ETSM Ret-->
+		<applications>
+			<application>UKO_NotifyConsumerProductOfferResult</application>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-31.000.13" jiraid="ESBKF-6227">
+		<!-- COVID-19. Доработка сервиса запрос кредитной истории. Интеграция с внешними БКИ. Блок Реструкторизации-->
+		<applications>
+			<application>CRH_SrvGetCreditHistoryASSD</application>
+			<application>CRH_SrvGetCreditHistoryEI</application>
+			<application>CRH_SrvGetCreditHistoryGPSK</application>
+			<application>CRH_SrvGetCreditHistoryNBCH</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-31.000.12" jiraid="ESBKF-5413">
+		<!-- Исправление SynapseOneWayBalancer-->
+		<applications>
+			<application>SynapseOneWayBalancer</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-31.000.11" jiraid="ESBKF-5957">
+		<!--SrvGetCreditLiabilities, маппинг для запроса(PPRB.SPR) и ответа(ECH)-->
+		<applications>
+			<application>GCL_SrvGetCreditLiabilities</application>
+			<application>PPRB_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>PPRB_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-31.000.10" jiraid="ESBKF-6031">
+		<!--Создание отдельных Listener для Synapse-->
+		<applications>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>SYNAPSE_CONNECTION</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-31.000.09" jiraid="ESBKF-5903">
+		<!--Интеграция АС ОКР - КСШ КФ - TSM. Добавлен блок с ИНН-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-31.000.08" jiraid="ESBKF-6007">
+		<!--мапинг сервиса ApplicationForConsumerProduct-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-31.000.07" jiraid="ESBKF-5944">
+		<!--Расширение атрибутного состава, изменение обязательности. КК для ВИП-Клиентов-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-31.000.06" jiraid="ESBKF-5847">
+		<!--Расширение формата запроса и ответа сервиса SrvGetCreditHistory для АС СД-->
+		<applications>
+			<application>CRH_SrvGetCreditHistoryASSD</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-31.000.05" jiraid="ESBKF-5857">
+		<!--Доработка сервиса Антифрод: SrvCheckRetailApplicationForSocialFraud (самозанятые)-->
+		<applications>
+			<application>MMZ_SrvCheckRetailApplicationForSocialFraud</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-31.000.04" jiraid="ESBKF-5877">
+		<!--SrvGetClientRateAndCreditHistory. добавление нового блока securityAggregates-->
+		<applications>
+			<application>CRCH_SrvGetClientRateAndCreditHistory</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-31.000.03" jiraid="ESBKF-5740">
+		<!--SrvSetRealEstateObject. добавление нового поля totalSquareEGRN-->
+		<applications>
+			<application>RLTSET_SrvSetRealEstateObject</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-31.000.02" jiraid="ESBKF-5596">
+		<!--Расширение checkCODWAY4 на номера счетов. SrvGetClientExtendedRate-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-31.000.01" jiraid="ESBKF-5852">
+		<!--Передача кода цели для Сетелем-->
+		<applications>
+			<application>UA_SrvGetUniversalAssessment</application>
+			<application>CETELEM_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-30.000.07" jiraid="ESBKF-5796">
+		<!--Реализовать передачу срока моратория в статусе-->
+		<applications>
+			<application>UKO_UpdateApplicationStatus</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-30.000.06" jiraid="ESBKF-5495">
+		<!--Доработка сервиса создания заявки из ЕФС для передачи PensionStatementData, DataDigitalCitizenProfile из ЕФС в ETSM-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-30.000.05" jiraid="ESBKF-5598">
+		<!--В SrvTransApprovedApplicationInfo добавить тэги для передачи единицы измерения срока кредита и признака подписания документов-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-30.000.04" jiraid="ESBKF-5317">
+		<!--Подключение Агрегатор POS-кредитов к КСШ КФ-->
+		<applications>
+			<application>PPRB_MQAdapter</application>
+			<application>UKO_InitiateConsumerProductOffer</application>
+			<application>UKO_NotifyConsumerProductOfferResult</application>
+			<application>UFS_SrvChangeAppForConsumerProdStatus</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>PPRB_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-30.000.03" jiraid="ESBKF-5746">
+		<!-- Добавляем балансировщик запросов из ЕКС,ЕКП,ЭДОсГО для Synapse-->
+		<applications>
+			<application>appCheckEvents</application>
+			<application>appMessageTransfer</application>
+			<application>appUpdateARMCache</application>
+			<application>UCx_SynapseOneWayBalancer</application>
+			<application>UCx_MQAdapter</application>
+			<application>SynapseOneWayBalancer</application>
+			<application>EDF_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>SYNAPSE_CONNECTION</tag>
+			<tag>SYNAPSE_ENDPOINT</tag>
+			<tag>EDF_GW</tag>
+			<tag>UCS_GW</tag>
+			<tag>UCS38_GW</tag>
+			<tag>UCP_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-30.000.02" jiraid="ESBKF-5725">
+		<!--Подключение Агрегатор POS-кредитов к КСШ КФ. Ч2. SrvUpdateApplicationForConsumerProductStatus-->
+		<applications>
+			<application>PPRB_MQAdapter</application>
+			<application>UKO_UpdateApplicationStatus</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>PPRB_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-30.000.01" jiraid="ESBKF-5692">
+		<!--Создание канала для Прокси-панатора tsufx на КСШ КФ-->
+		<applications>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>WAY4_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-29.000.27" jiraid="ESBKF-5637">
+		<!--ответа в Транзакт с результатами скоринга на моделях MEF-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-29.000.26" jiraid="ESBKF-5524">
+		<!--KEFIR. Доработка УВ и FraudScore-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+			<application>GFS_SrvGetFraudScore</application>
+			<application>TSM_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>POS_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-29.000.25" jiraid="ESBKF-5587">
+		<!--Подключение Агрегатор POS-кредитов к КСШ КФ (Часть 1)-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+			<application>PPRB_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>PPRB_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-29.000.24" jiraid="ESBKF-5130">
+		<!--Доработка сервиса SrvCheckMoratoriumRefusalForConsumerProducto-->
+		<applications>
+			<application>UFS_SrvCheckMoratoriumRefusalForConsumerProduct</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-29.000.23" jiraid="ESBKF-5566">
+		<!--SrvGetClientExtendedRate. Расширение данными ответа стратегии Анализ ЦОД-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-29.000.22" jiraid="ESBKF-5592">
+		<!--SrvGetCreditHistory. Снять обязательность registration_date-->
+		<applications>
+			<application>CRH_SrvGetCreditHistoryGPSK</application>
+			<application>CRH_SrvGetCreditHistoryASSD</application>
+			<application>CRH_SrvGetCreditHistoryEI</application>
+			<application>CRH_SrvGetCreditHistoryNBCH</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-29.000.21" jiraid="ESBKF-5407">
+		<!--Доработка SrvUpdateApplicationForConsumerProductStatus добавление subsystemcode-->
+		<applications>
+			<application>UKO_UpdateApplicationStatus</application>
+			<application>TSM_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-29.000.20" jiraid="ESBKF-5480">
+		<!-- Установка таймаута-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-29.000.19" jiraid="ESBKF-5572">
+		<!--добавление новый тип кредита 20 CRH_SrvGetCreditHistoryGPSK-->
+		<applications>
+			<application>CRH_SrvGetCreditHistoryGPSK</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-29.000.18" jiraid="ESBKF-5541">
+		<!--добавление новых атрибутов  сервиса srvSetRealEstateObject-->
+		<applications>
+			<application>RLTSET_SrvSetRealEstateObject</application>
+		</applications>
+		<ServiceList>
+			<Service>SetRealEstateObject</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-29.000.17" jiraid="ESBKF-5137">
+		<!--Многоточечное подключение КСШ КФ для Transact SM розничный-->
+		<applications>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>TSM_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-29.000.16" jiraid="ESBKF-4737">
+		<!--Получение номера счета по номеру карты из ППРБ-->
+		<applications>
+			<application>SLR_SrvGetCardSalaryAmount</application>
+			<application>SLR_SrvGetAccountSalaryAmount</application>
+			<application>ECH_MQAdapter</application>
+			<application>TSM_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>PPRB_GW</tag>
+			<tag>ECH_GW</tag>
+			<tag>SERVICE_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-29.000.15" jiraid="ESBKF-5465">
+		<!--SrvGetCreditLiabilities подключение СПР.ГС - Система принятия решений. Подсистема Генерация событий -->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+			<application>TSM_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-29.000.14" jiraid="ESBKF-5062">
+		<!--SrvGetCreditLiabilities подключение СПР.ГС - Система принятия решений. Подсистема Генерация событий -->
+		<applications>
+			<application>GCL_SrvGetCreditLiabilities</application>
+			<application>SPR_MQAdapter</application>
+			<application>ECH_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>SPR_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-29.000.13" jiraid="ESBKF-4875">
+		<!--Интеграция СБОФ Мидл и ЕКС через сервис КСШ КФ SrvTransApprovedApplicationInfo-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+			<application>TRANSCNT_SrvTransCreditContractInfo</application>
+			<application>KKMB_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-29.000.12" jiraid="ESBKF-5234">
+		<!-- MC_SrvGetClientExtendedRate. PD-модель. Интеграция АС ОКР / TSM (дработка ответа УВ)-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-29.000.11" jiraid="ESBKF-5203">
+		<!--SrvSearchApplicationForConsumerProduct дублирование запроса для ОКР PreRequest-->
+		<applications>
+			<application>UKO_SrvSearchApplicationForConsumerProduct</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>ECH_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-29.000.10" jiraid="ESBKF-4833">
+		<!--SrvCreateApplicationForConsumerProduct - заявка на кредитную карту из СПООБК2 в TSM-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-29.000.09" jiraid="ESBKF-5313">
+		<!--Корректировка маппинга ответа от Эквифакс-->
+		<applications>
+			<application>CRH_SrvGetCreditHistoryGPSK</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-29.000.08" jiraid="ESBKF-5239">
+		<!--Перевод ЕКС на МТП с КСШ КФ. Добавлены скрипты-->
+		<applications>
+			<application>UCx_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>UCS38_GW</tag>
+			<tag>UCS_GW</tag>
+			<tag>UCP_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-29.000.07" jiraid="ESBKF-4438">
+		<!--Новые параметры в рамках кредитования Самозанятых клиентов + маскирование MC_SrvGetClientExtendedRate-->
+		<applications>
+			<application>UFS_SrvChangeAppForConsumerProdStatus</application>
+			<application>UFS_MQAdapter</application>
+			<application>ECH_USO_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-29.000.06" jiraid="ESBKF-5076">
+		<!--Перенос стратегий SM2 и SM3 в АС ОКР - мапинг поля creditFlowId-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-29.000.05" jiraid="ESBKF-5009">
+		<!--Доработка SrvTransApprovedApplicationInfo добавление поля channel-->
+		<applications>
+			<application>TRANSCARD_SrvTransApprovedCardInfo</application>
+			<application>APRCRD_SrvCardApproveInfo</application>
+			<application>CRHSCR_SrvGetCreditHistoryScoring</application>
+			<application>UKO_NewApp</application>
+			<application>UFS_SrvChangeAppForConsumerProdStatus</application>
+			<application>UKO_UpdateApplicationStatus</application>
+			<application>PPRB_SrvCalcClientCreditRating</application>
+			<application>UKO_NotifyConsumerProductOfferResult</application>
+			<application>TRANSISSUE_SrvTransCardIssue</application>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+			<application>MC_SrvGetClientExtendedRate</application>
+			<application>UA_SrvGetUniversalAssessment</application>
+			<application>KKMB_MQAdapter</application>
+			<application>ECH_MQAdapter</application>
+			<application>ERIB_MQAdapter</application>
+			<application>UCx_MQAdapter</application>
+			<application>PPRB_MQAdapter</application>
+			<application>TSM_MQAdapter</application>
+			<application>UFS_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-29.000.04" jiraid="ESBKF-5021">
+		<!--Новые параметры в рамках кредитования Самозанятых клиентов + маскирование MC_SrvGetClientExtendedRate-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+			<application>ECH_RATE_MQAdapter</application>
+			<application>ECH_RELIABILITY_MQAdapter</application>
+			<application>PPRB_MQAdapter</application>
+			<application>TSM_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-29.000.03" jiraid="ESBKF-5243">
+		<!--Доработка SrvGetCreditHistory для ОКР-АС СД. Добавления % ставки-->
+		<applications>
+			<application>CRH_SrvGetCreditHistoryASSD</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-29.000.02" jiraid="ESBKF-5215">
+		<!--Доработка SrvTransApprovedApplicationInfo добавление поля channel-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-29.000.01" jiraid="ESBKF-4766">
+		<!--Доработка КСШ КФ для передачи полного ответа БКИ в ОКР-->
+		<applications>
+			<application>CRH_SrvGetCreditHistoryEI</application>
+			<application>CRH_SrvGetCreditHistoryGPSK</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-29.000.0x" jiraid="ECH_MQAdapter">
+		<!--test в ОКР-->
+		<applications>
+			<application>ECH_MQAdapter</application>
+			<application>ECH_RATE_MQAdapter</application>
+			<application>ECH_RELIABILITY_MQAdapter</application>
+			<application>ECH_PFM_MQAdapter</application>
+			<application>ECH_USO_MQAdapter</application>
+			<application>ECH_PTI_MQAdapter</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-28.000.34" jiraid="ESBKF-5057">
+		<!--Многоточечное подключение КСШ КФ для Transact SM розничный-->
+		<applications>
+			<application>UFS_MQAdapter</application>
+			<application>ECH_RATE_MQAdapter</application>
+			<application>ECH_MQAdapter</application>
+			<application>ECH_RELIABILITY_MQAdapter</application>
+		</applications>
+		<system>
+			<tag>TSM_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-28.000.33" jiraid="ESBKF-5101">
+		<!--добавление новых атрибутов  сервиса srvSetRealEstateObject-->
+		<applications>
+			<application>RLTSET_SrvSetRealEstateObject</application>
+		</applications>
+		<ServiceList>
+			<Service>SetRealEstateObject</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-28.000.31" jiraid="ESBKF-4992">
+		<!--Доработка сервиса SrvCheckMoratoriumRefusalForConsumerProduct для взаимодействия с ДК -->
+		<applications>
+			<application>UFS_SrvCheckMoratoriumRefusalForConsumerProduct</application>
+			<application>DC_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>GWDB_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-28.000.30" jiraid="ESBKF-4976">
+		<!--сервис SrvCreateApplicationForConsumerProduct-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+			<application>UKO_UpdateApplicationStatus</application>
+			<application>UKO_InitiateConsumerProductOffer</application>
+			<application>UKO_NotifyConsumerProductOfferResult</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvCreateApplicationForConsumerProduct</Service>
+			<Service>SrvNotifyConsumerProductOfferResult</Service>
+			<Service>SrvNotifyConsumerProductOffer</Service>
+			<Service>SrvUpdateApplicationForConsumerProductStatus</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-28.000.29" jiraid="ESBKF-4851">
+		<!--сервис SrvGetCreditLiabilities-->
+		<applications>
+			<application>GCL_SrvGetCreditLiabilities</application>
+			<application>ECH_MQAdapter</application>
+			<application>APKKB_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>ECH_GW</tag>
+			<tag>APKKB_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-28.000.x7" jiraid="ESBKF-3519">
+		<applications>
+			<application>KLT_MQAdapter</application>
+			<application>PPRB_MQAdapter</application>
+			<application>ECH_RATE_MQAdapter</application>
+			<application>ECH_RELIABILITY_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<!--
+	<rfc version="SP-28.000.x6" jiraid="ESBKF-3519">
+		<applications>
+			<application>SLR_SrvGetCardSalaryAmount</application>
+			<application>SLR_SrvGetAccountSalaryAmount</application>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+			<application>TRANSCARD_SrvTransApprovedCardInfo</application>
+			<application>TSM_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-28.000.x5" jiraid="ESBKF-3519">
+		<applications>
+			<application>SLR_SrvGetCardSalaryAmount</application>
+			<application>SLR_SrvGetAccountSalaryAmount</application>
+			<application>ECH_MQAdapter</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-28.000.28" jiraid="ESBKF-3519">
+		<applications>
+			<application>CRM_MQAdapter</application>
+			<application>DC_MQAdapter</application>
+			<application>ECH_MQAdapter</application>
+			<application>ECH_RATE_MQAdapter</application>
+			<application>ECH_RELIABILITY_MQAdapter</application>
+			<application>ERIB_MQAdapter</application>
+			<application>KKMB_MQAdapter</application>
+			<application>PPRB_MQAdapter</application>
+			<application>TSM_MQAdapter</application>
+			<application>UFS_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-28.000.x4" jiraid="ESBKF-3519">
+		<applications>
+			<application>UKO_NotifyConsumerProductOfferResult</application>
+			<application>UFS_SrvChangeAppForConsumerProdStatus</application>
+			<application>UKO_NewApp</application>
+			<application>UKO_ApplicationForConsumerProduct</application>
+			<application>UFS_MQAdapter</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-28.000.x3" jiraid="ESBKF-3519">
+		<applications>
+			<application>UA_SrvGetUniversalAssessment</application>
+			<application>UKO_ApplicationForConsumerProduct</application>
+			<application>DC_MQAdapter</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-28.000.x2" jiraid="ESBKF-3519">
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+			<application>PPRB_SrvCalcClientCreditRating</application>
+			<application>UKO_NewApp</application>
+			<application>ERIB_MQAdapter</application>
+		</applications>
+	</rfc> 
+	<rfc version="SP-28.000.x1" jiraid="ESBKF-3519">
+		<applications>
+			<application>CRM_MQAdapter</application>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</application>
+	</rfc>
+	<rfc version="SP-28.000.28" jiraid="ESBKF-3519">
+		<applications>
+			<application>APRCRD_SrvCardApproveInfo</application>
+			<application>CRHTOPUP_SrvGetCreditHistoryForTopUp</application>
+			<application>CRHSCR_SrvGetCreditHistoryScoring</application>
+			<application>TSM_MQAdapter</application>
+			<application>ECH_MQAdapter</application>
+			<application>KKMB_MQAdapter</application>
+			<application>SPOOBK2_SOAPRequestAdapter</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvCardApproveInfo</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-28.000.0x" jiraid="clwlrankUCS">
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+			<application>TRANSCNT_SrvTransCreditContractInfo</application>
+			<application>GLOCD_SrvGetLegalOverdraftCalcData</application>
+			<application>NTRCNL_SrvBankPledgeNotificationCancel</application>
+			<application>NTRCRT_SrvBankRegistrationCertificate</application>
+			<application>NTRTKT_SrvBankPledgeNotificationTicket</application>
+		</applications>
+	</rfc>
+	-->
+	<rfc version="SP-28.000.0x" jiraid="clwlrankUCS">
+		<!--Перевод ЕКС на МТП с КСШ КФ-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+			<application>TRANSCNT_SrvTransCreditContractInfo</application>
+			<application>GLOCD_SrvGetLegalOverdraftCalcData</application>
+			<application>NTRCNL_SrvBankPledgeNotificationCancel</application>
+			<application>NTRCRT_SrvBankRegistrationCertificate</application>
+			<application>NTRTKT_SrvBankPledgeNotificationTicket</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-28.000.26" jiraid="ESBKF-5015">
+		<!--Доработка сервиса SrvUpdateApplicationForConsumerProductStatus для взаимодействия с ДК расширение мапинга-->
+		<applications>
+			<application>UKO_UpdateApplicationStatus</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-28.000.25" jiraid="ESBKF-4412">
+		<!--Расширение сервиса SvGetClientExtendedRate. Перенос стратегии SM2 из TSM в АС ОКР-->
+		<applications>
+			<application>UFS_MQAdapter</application>
+			<application>TSM_MQAdapter</application>
+			<application>PPRB_MQAdapter</application>
+			<application>ECH_RATE_MQAdapter</application>
+			<application>ECH_RELIABILITY_MQAdapter</application>
+			<application>MC_SrvGetClientExtendedRate</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-28.000.24" jiraid="ESBKF-4818">
+		<!--сервис SrvGetClientDebts-->
+		<applications>
+			<application>GCD_SrvGetClientDebts</application>
+			<application>ECH_MQAdapter</application>
+			<application>OD_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>ECH_GW</tag>
+			<tag>OD_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-28.000.23" jiraid="ESBKF-5027">
+		<!--Доработка КСШ КФ сервиса SrvGetClientExtendedRate в части задачи ПДН (добавление блока flagResIncomes)-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-28.000.22" jiraid="ESBKF-4613">
+		<!--Сервис уведомлений кредитной истории-->
+		<applications>
+			<application>CRHS_SrvCRHSubscription</application>
+			<application>ERIB_MQAdapter</application>
+			<application>ZAPROS_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>ZAPROS_GW</tag>
+			<tag>ERIB_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-28.000.21" jiraid="ESBKF-4568">
+		<!--Публикация КИ в Одлако Данных-->
+		<applications>
+			<application>OD_KafkaAdapter</application>
+			<application>CRH_SrvGetCreditHistoryEI</application>
+			<application>CRH_SrvGetCreditHistoryGPSK</application>
+			<application>CRH_SrvGetCreditHistoryNBCH</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetCreditHistory</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-28.000.20" jiraid="ESBKF-4604">
+		<!--Расширение сервиса SrvSearchApplicationForConsumerProduct-->
+		<applications>
+			<application>UKO_SrvSearchApplicationForConsumerProduct</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-28.000.19" jiraid="ESBKF-4558">
+		<!-- Создание сервисов SrvGetUnifiedForm и SrvPutUnifiedForm  -->
+		<applications>
+			<application>UFS_SrvGetUnifiedForm</application>
+			<application>UFS_SrvPutUnifiedForm</application>
+			<application>AGGR_MQAdapter</application>
+			<application>UFS_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>AGGR_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-28.000.18" jiraid="ESBKF-3520">
+		<!--АРМ КСШ КФ openshift-->
+		<applications>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-28.000.17" jiraid="ESBKF-4438">
+		<!-- Подключение потребителя UFS к сервису SrvGetUniversalAssessment для универсальной оценки  -->
+		<applications>
+			<application>UA_SrvGetUniversalAssessment</application>
+			<application>ECH_USO_MQAdapter</application>
+			<application>UFS_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-28.000.16" jiraid="ESBKF-4608">
+		<!--Перевод сервисов, реализованный в рамках проекта Scaner-->
+		<applications>
+			<application>GSE_SrvGetSummaryEstimate</application>
+			<application>CRCH_SrvGetClientRateAndCreditHistory</application>
+			<application>UCH_SrvUpdateCreditHistory</application>
+			<application>KKMB_MQAdapter</application>
+			<application>MMZ_MQAdapter</application>
+			<application>ECH_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>MMZ_GW</tag>
+			<tag>ECH_GW</tag>
+			<tag>KKMB_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-28.000.15" jiraid="ESBKF-4802">
+		<!--Расширение атрибутного состава-->
+		<applications>
+			<application>UFS_MQAdapter</application>
+			<application>UFS_SrvChangeAppForConsumerProdStatus</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-28.000.14" jiraid="ESBKF-3829">
+		<!--CRHTOPUP_SrvGetCreditHistoryForTopUp-->
+		<applications>
+			<application>CRHTOPUP_SrvGetCreditHistoryForTopUp</application>
+			<application>ECH_MQAdapter</application>
+			<application>UFS_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>UFS_GW</tag>
+			<tag>ECH_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-28.000.13" jiraid="ESBKF-4660">
+		<!--Расширение сервиса LoanPositiveDecisionRequest-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-28.000.12" jiraid="ESBKF-4503">
+		<!--Расширение сервиса LoanPositiveDecisionRequest-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-28.000.11" jiraid="ESBKF-3931">
+		<!--Настройки для GW3 и GW4 ЕФС 7.0-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+			<application>UKO_ApplicationForConsumerProduct</application>
+			<application>UFS_SrvChangeAppForConsumerProdStatus</application>
+			<application>UKO_InitiateConsumerProductOffer</application>
+			<application>UKO_NotifyConsumerProductOfferResult</application>
+			<application>UKO_NewApp</application>
+			<application>UKO_UpdateApplicationStatus</application>
+			<application>UKO_SrvSearchApplicationForConsumerProduct</application>
+			<application>UFS_SrvCheckMoratoriumRefusalForConsumerProduct</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>MQM_GW3</tag>
+			<tag>MQM_GW4</tag>
+			<tag>CORE_GW</tag>
+			<tag>UFS_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-28.000.10" jiraid="ESBKF-4459">
+		<!--Расширение сервиса LoanPositiveDecisionRequest-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+			<application>MC_SrvGetClientExtendedRate</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-28.000.09" jiraid="ESBKF-4578">
+		<!--Расширение сервиса LoanPositiveDecisionRequest-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-28.000.08" jiraid="ESBKF-4508">
+		<!--Для ФП POS-кредиты расширить ответ SrvGetClientExtendedRate блоком с кредитными историями-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-28.000.07" jiraid="ESBKF-4138">
+		<!--Доработка SrvCreateApplicationForConsumerProduct: 4 новых атрибута в блоке POSCredit -->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+			<application>MC_SrvGetClientExtendedRate</application>
+			<application>CRM_MQAdapter</application>
+			<application>DC_MQAdapter</application>
+			<application>ERIB_MQAdapter</application>
+			<application>FSB_MQAdapter</application>
+			<application>HABBL_MQAdapter</application>
+			<application>SPOOBK2_MQAdapter</application>
+			<application>UFS_MQAdapter</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-28.000.06" jiraid="ESBKF-4383">
+		<!--Расчет показателя долговой нагрузки по ЖК-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+			<application>CALCPTI_SrvGetCalcPTI</application>
+			<application>ECH_PTI_MQAdapter</application>
+			<application>TSM_MQAdapter</application>
+			<application>ECH_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>ECH_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvGetCalcPTI</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-28.000.05" jiraid="ESBKF-4415">
+		<!--Доработка SrvCreateApplicationForConsumerProduct в части ЕФС добавление EKPSubSystemCode-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+		<ServiceList>
+			<Service>ApplicationForConsumerProduct</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-28.000.04" jiraid="ESBKF-4243">
+		<!-- Подключение потребителя Kalita к сервису SrvGetUniversalAssessment для оценки в УСО -->
+		<applications>
+			<application>UA_SrvGetUniversalAssessment</application>
+			<application>KLT_MQAdapter</application>
+			<application>ECH_USO_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>KLT_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-28.000.03" jiraid="ESBKF-4433">
+		<!--Доработка SrvCreateApplicationForConsumerProduct в части анкетных данных по заявке часть 2 Промоакция-->
+		<applications>
+			<application>UKO_UpdateApplicationStatus</application>
+		</applications>
+		<ServiceList>
+			<Service>UpdateApplicationStatus</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-28.000.02" jiraid="ESBKF-3522">
+		<!--АРМ КСШ КФ 2.0-->
+		<applications>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-28.000.01" jiraid="ESBKF-4398">
+		<!--Доработка схемы сервиса SrvCreateApplicationForConsumerProduct - добавление промо акций-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+		<ServiceList>
+			<Service>ApplicationForConsumerProduct</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="D-28.000.00" jiraid="ESBKF-4582">
+		<!--Fake-->
+		<applications>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-27.000.23" jiraid="ESBKF-3978">
+		<!--Разработка нового сервиса для передачи отказных заявок из Транзакта Розн. в Транзакт Малбизнеса-->
+		<applications>
+			<application>CAFRTL_SrvCreateAppFromRTL</application>
+			<application>TSM_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-27.000.22" jiraid="ESBKF-3812">
+		<!--Передача нового параметра с признаком вызова сервиса GFL из ОКР в TSM-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-27.000.21" jiraid="ESBKF-3954">
+		<!--Доработка сервиса SrvGetMBKIBuisinessInquiryRq. Расширение адресных данных-->
+		<applications>
+			<application>MBKIBI_SrvGetMBKIBusinessInquiry</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-27.000.20" jiraid="ESBKF-3720">
+		<!--Расчет показателя долговой нагрузки по ЖК (КСШ) ч.1 взаимосвязь ETSM-АС ОКР-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetClientExtendedRate</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-27.000.19" jiraid="ESBKF-4190">
+		<!--Доработка SrvCreateApplicationForConsumerProduct в части анкетных данных по заявке-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+		<ServiceList>
+			<Service>ApplicationForConsumerProduct</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-27.000.18" jiraid="ESBKF-3517">
+		<!-- Реализация проекта КеФИР -->
+		<applications>
+			<application>Hunter_SrvUpdateMetadata</application>
+			<application>Hunter_SrvOnlineMatchingChange</application>
+			<application>NHunter_SrvOnlineMatchingChange</application>
+			<application>FPSUPD_SrvUpdateApplicationForCredit</application>
+			<application>FPSFRUPD_SrvUpdateApplicationForFraud</application>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+			<application>UKO_UpdateApplicationStatus</application>
+			<application>UKO_NotifyConsumerProductOfferResult</application>
+			<application>UKO_InitiateConsumerProductOffer</application>
+			<application>MC_SrvGetClientExtendedRate</application>
+			<application>GFS_SrvGetFraudScore</application>
+			<application>TSM_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>POS_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-27.000.17" jiraid="ESBKF-4039">
+		<!--Доработка сервисов для отправки выписки ПФР из ДомКлик в ETSM-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+		<ServiceList>
+			<Service>ApplicationForConsumerProduct</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-27.000.16" jiraid="ESBKF-4142">
+		<!--Доработка SrvGetCreditHistory для Кредитного потенциала-->
+		<applications>
+			<application>CRH_SrvGetCreditHistoryASSD</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetCreditHistory</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-27.000.15" jiraid="ESBKF-4313">
+		<!--Решение при передаче он-лайн отказных заявок в Сетелем с намеспейсами-->
+		<applications>
+			<application>TRAI_SrvTransRefusalsApplicationInfo</application>
+			<application>TSM_MQAdapter</application>
+			<application>CETELEM_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>GWDB_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvTransRefusalsApplicationInfo</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-27.000.14" jiraid="ESBKF-3891">
+		<!--Доработать сервисы КСШ КФ для рефинансирования внешних кредитов в СБОЛ-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetClientExtendedRate</Service>
+			<Service>ApplicationForConsumerProduct</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-27.000.13" jiraid="ESBKF-4377">
+		<!--SrvTransApprovedApplicationInfo необходимо передавать информацию по подписанным онлайн договорам-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-27.000.12" jiraid="ESBKF-4324">
+		<!--Cервис получения данных по транзакциям клиента из ДДРВ-->
+		<applications>
+			<application>ONS_SrvOnlineNeuroScoring</application>
+			<application>OD_MQAdapter</application>
+			<application>ECH_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>OD_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvOnlineNeuroScoring</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-27.000.11" jiraid="ESBKF-3465">
+		<!--Решение при передаче он-лайн отказных заявок в Сетелем-->
+		<applications>
+			<application>TRAI_SrvTransRefusalsApplicationInfo</application>
+			<application>TSM_MQAdapter</application>
+			<application>CETELEM_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>GWDB_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvTransRefusalsApplicationInfo</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-27.000.10" jiraid="ESBKF-3518">
+		<!--Перевод на MQ интеграции Way4-->
+		<applications>
+			<application>SLR_SrvGetCardSalaryAmount</application>
+			<application>SLR_SrvGetCardSalaryAmount001</application>
+			<application>ECH_MQAdapter</application>
+			<application>TSM_MQAdapter</application>
+			<application>TSM_SOAPInputAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>SERVICE_GW</tag>
+			<tag>WAY4_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvGetCardSalaryAmount</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-27.000.09" jiraid="ESBKF-3979">
+		<!--Добавление полей к SrvCreateApplicationForConsumerProduct ECMFolderGUID, SalaryClientApproveFlag, AppPriority-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+		<ServiceList>
+			<Service>ApplicationForConsumerProduct</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-27.000.08" jiraid="ESBKF-3817">
+		<!--Снижение % ставки: этап 2-->
+		<applications>
+			<application>UKO_InitiateConsumerProductOffer</application>
+			<application>UKO_NotifyConsumerProductOfferResult</application>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+		</applications>
+		<ServiceList>
+			<Service>InitiateConsumerProductOffer</Service>
+			<Service>NotifyConsumerProductOfferResult</Service>
+			<Service>SrvTransApprovedApplicationInfo</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-27.000.07" jiraid="ESBKF-3821">
+		<!--Доработка сервиса SrvGetCreditHistory - доп.признак созаемщик-->
+		<applications>
+			<application>CRH_SrvGetCreditHistoryASSD</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetCreditHistory</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-27.000.06" jiraid="ESBKF-3842">
+		<!--Выпуск скрипта для увеличения пропускной способности каналов до 80Мб-->
+		<applications>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-27.000.05" jiraid="ESBKF-3868">
+		<!-- Подключение потребителя ППРБ к сервису SrvGetUniversalAssessment для оценки в УСО -->
+		<applications>
+			<application>UA_SrvGetUniversalAssessment</application>
+			<application>PPRB_MQAdapter</application>
+			<application>ECH_USO_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>PPRB_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-27.000.04" jiraid="ESBKF-3863">
+		<!-- добавлена маршрутизация SrvCalClientRating на SrvGetUniversalAssessment-->
+		<applications>
+			<application>UA_SrvGetUniversalAssessment</application>
+			<application>CETELEM_MQAdapter</application>
+			<application>ECH_USO_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetUniversalAssessment</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-27.000.03" jiraid="ESBKF-3825">
+		<!-- расширение мапинга ответов ОКР в ЕФС-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetClientExtendedRate</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-27.000.02" jiraid="ESBKF-3905">
+		<!-- добавления признака ИУК подписан БФО-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvTransApprovedApplicationInfo</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-27.000.01" jiraid="ESBKF-3611">
+		<!--Подключение УСВБО по MQ-->
+		<applications>
+			<application>SLR_SrvGetAccountSalaryAmount</application>
+			<application>SLR_SrvGetCardSalaryAmount</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>USVBO_GW</tag>
+			<tag>SERVICE_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvGetAccountSalaryAmount</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-26.000.15" jiraid="ESBKF-3734">
+		<!--Kalita - SrvGetCreditHistotry-->
+		<applications>
+			<application>CRH_SrvGetCreditHistoryASSD</application>
+			<application>CRH_SrvGetCreditHistoryEI</application>
+			<application>CRH_SrvGetCreditHistoryGPSK</application>
+			<application>CRH_SrvGetCreditHistoryNBCH</application>
+			<application>KLT_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-26.000.14" jiraid="ESBKF-3687">
+		<!--мапирование ApplicationDate и SubSystemCode для ЕФС-->
+		<applications>
+			<application>UKO_SrvSearchApplicationForConsumerProduct</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvSearchApplicationForConsumerProduct</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-26.000.13" jiraid="ESBKF-3793">
+		<!--Включение MQRFH2 на СПООБК2 и MQRFH2.usr.OperationName=CardBackofficeRequest-->
+		<applications>
+			<application>TRANSCARD_SrvTransApprovedCardInfo</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvTransApprovedCardInfo</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-26.000.12" jiraid="ESBKF-3600">
+		<!--Cервис получения данных по транзакциям клиента из ДДРВ-->
+		<applications>
+			<application>ONS_SrvOnlineNeuroScoring</application>
+			<application>OD_MQAdapter</application>
+			<application>ECH_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>OD_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvOnlineNeuroScoring</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-26.000.11" jiraid="ESBKF-3569">
+		<!--Реализация сервиса SrvChangeApplicationMGStatus для корректировки статуса в ETSM-->
+		<applications>
+			<application>CAMGS_SrvChangeApplicationMGStatus</application>
+			<application>TSM_MQAdapter</application>
+			<application>DC_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvChangeApplicationMGStatus</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-26.000.10" jiraid="ESBKF-3731">
+		<!--Доработка сервиса SrvSetRealEstateObject для Электронной закладной-->
+		<applications>
+			<application>RLTSET_SrvSetRealEstateObject</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvSetRealEstateObject</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-26.000.09" jiraid="ESBKF-3546">
+		<!--Подписание Клиентом кредитно-обеспечительной документации по КБК в СББОЛ-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvTransApprovedApplicationInfo</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-26.000.08" jiraid="ESBKF-3464">
+		<!--Реорганизация ЗСБ-->
+		<applications>
+			<application>SLR_SrvGetAccountSalaryAmount</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetAccountSalaryAmount</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-26.000.07" jiraid="ESBKF-3521">
+		<!--Мапинг SrvGetCreditHistory - loadDate, partnerRating, partnerType-->
+		<applications>
+			<application>CRH_SrvGetCreditHistoryEI</application>
+			<application>CRH_SrvGetCreditHistoryGPSK</application>
+			<application>CRH_SrvGetCreditHistoryNBCH</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetCreditHistory</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-26.000.06" jiraid="ESBKF-3587">
+		<!--Доработка сервиса Управляющий вызов из ОКР в TSM Разметка пилотных заявок-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetClientExtendedRate</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-26.000.05" jiraid="ESBKF-3548">
+		<!--Доработка сервиса SrvTransApprovedApplicationInfo для Электронной закладной-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvTransApprovedApplicationInfo</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-26.000.04" jiraid="ESBKF-3716">
+		<!--Электронная закладная. Добработка LoanPositiveDecisionRequest-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvTransApprovedApplicationInfo</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-26.000.03" jiraid="ESBKF-3542">
+		<!--Доработка сервиса SrvUpdateApplicationForConsumerProductStatus для взаимодействия с КСШ СМ-->
+		<applications>
+			<application>UKO_UpdateApplicationStatus</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>SM_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvUpdateApplicationStatus</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-26.000.02" jiraid="ESBKF-3554">
+		<!--Мапинг SrvTransCardIssueInfo-->
+		<applications>
+			<application>TRANSCARD_SrvTransApprovedCardInfo</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvTransApprovedCardInfo</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-26.000.01" jiraid="ESBKF-3495">
+		<!--Оформление КК улица через СПООБК-->
+		<applications>
+			<application>UFS_SrvCheckMoratoriumRefusalForConsumerProduct</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvCheckMoratoriumRefusalForConsumerProduct</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="D-26.000.00" jiraid="ESBKF-3846">
+		<!--Выпуск дистрибутива-->
+		<applications>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-25.000.16" jiraid="ESBKF-2583">
+		<!--Выпуск дистрибутива-->
+		<applications>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc number="550972" version="SP-25.000.15" jiraid="ESBKF-3275">
+		<!--Обновление адаптера к сервису SrvCreateApplicationForConsumerProduct-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+			<application>UKO_ApplicationForConsumerProduct</application>
+			<application>UKO_NotifyConsumerProductOfferResult</application>
+			<application>UpdateCache</application>
+			<application>TSM_MQAdapter</application>
+			<application>UFS_MQAdapter</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetClientExtendedRate</Service>
+			<Service>SrvTransApprovedApplicationInfo</Service>
+			<Service>ApplicationForConsumerProduct</Service>
+			<Service>NotifyConsumerProductOfferResult</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-25.000.14" jiraid="ESBKF-3325">
+		<!--Подключение TSM_TST-->
+		<applications>
+			<application>TSM_MQAdapter</application>
+			<application>ECH_MQAdapter</application>
+			<application>MC_SrvGetClientExtendedRate</application>
+			<application>UpdateCache</application>
+			<application>HadoopEventLogger</application>
+			<application>HadoopTransactionLogger</application>
+		</applications>
+		<system>
+			<tag>TSM_GW</tag>
+			<tag>ECH_GW</tag>
+			<tag>CORE_EL</tag>
+			<tag>ARM_EL</tag>
+			<tag>CORE_ADP</tag>
+			<tag>ARM_ADP</tag>
+			<tag>CORE_DI</tag>
+			<tag>ARM_DI</tag>
+			<tag>CORE_REP</tag>
+			<tag>CLUSCHANNEL</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvGetClientExtendedRate</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-25.000.13" jiraid="ESBKF-3467">
+		<!--Передача в заголовке значения Greenfield в сервисе УВ TSM-ОКР-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetClientExtendedRate</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-25.000.12" jiraid="ESBKF-3446">
+		<!--Реализация универсального сервиса оценки-->
+		<applications>
+			<application>UA_SrvGetUniversalAssessment</application>
+			<application>DC_MQAdapter</application>
+			<application>ECH_USO_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>ECH_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvGetUniversalAssessment</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="543795" version="SP-25.000.11" jiraid="ESBKF-3270">
+		<!--Доработка форматов взаимодействия с Нотариатом-->
+		<applications>
+			<application>NTRNF_SrvBankPledgeNotification</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvBankPledgeNotification</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="561993" version="SP-25.000.10" jiraid="ESBKF-3164">
+		<!--Онлайн антифрод Этап -2. Расширение схемы GFS_SrvGetFraudScore-->
+		<applications>
+			<application>ECH_MQAdapter</application>
+			<application>GFS_SrvGetFraudScore</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>ECH_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvGetFraudScore</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="557634" version="SP-25.000.09" jiraid="ESBKF-3390">
+		<!--Доработка сервиса LoanPositiveDecisionRequest интеграции ETSM c ЕКП-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvTransApprovedApplicationInfo</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-25.000.08" jiraid="ESBKF-3406">
+		<!--Удаление пустых полей в ответе в ОКР-->
+		<applications>
+			<application>BRS_SrvGetBRSCreditRating</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetBRSCreditRating</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="562431" version="SP-25.000.07" jiraid="ESBKF-3427">
+		<!--Приведение поля transactRequestDateTime к формату даты-->
+		<applications>
+			<application>FMS_SrvFMSRequest</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvFMSRequest</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="557632" version="SP-25.000.06" jiraid="ESBKF-3389">
+		<!--Расширение схемы сервиса srvSetRealEstateObject-->
+		<applications>
+			<application>RLTSET_SrvSetRealEstateObject</application>
+		</applications>
+		<ServiceList>
+			<Service>SetRealEstateObject</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="556170" version="SP-25.000.05" jiraid="ESBKF-3365">
+		<!--Изменение обязательности поля в схеме сервиса SrvSetRealEstateObject-->
+		<applications>
+			<application>RLTSET_SrvSetRealEstateObject</application>
+		</applications>
+		<ServiceList>
+			<Service>SetRealEstateObject</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="545447" version="SP-25.000.04" jiraid="ESBKF-3167">
+		<!--Доработка сервиса SrvTransApprovedApplicationInfo для целей кредитования клиентов сх-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvTransApprovedApplicationInfo</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="553307" version="SP-25.000.03" jiraid="ESBKF-3310">
+		<!--ЕФС. Реализация поддержки требований КОПС для сервиса SrvGetClientExtendedRate-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetClientExtendedRate</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="534922" version="SP-25.000.02" jiraid="ESBKF-2516">
+		<!--Интеграция с ММЗ. Онлайн Антифрод этап 2. ВАЖНО!!! перед установкой необходимо создать пользователя mmz99usr-->
+		<applications>
+			<application>MMZ_MQAdapter</application>
+			<application>ECH_MQAdapter</application>
+			<application>MMZ_SrvCheckRetailApplicationForSocialFraud</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>MMZ_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvCheckRetailApplicationForSocialFraud</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="510644" version="SP-25.000.01" jiraid="ESBKF-3073">
+		<!--Доработка АС, необходимых для внедрения Сервиса расчета фрод на текущем решении АС Transact SM-->
+		<applications>
+			<application>TSM_MQAdapter</application>
+			<application>ECH_MQAdapter</application>
+			<application>GFS_SrvGetFraudScore</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>ECH_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvGetFraudScore</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="D-25.000.00" jiraid="ESBKF-3885">
+		<!--Выпуск фиктивного дистрибутива-->
+		<applications>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc number="535544" version="SP-24.000.11" jiraid="ESBKF-2949">
+		<!--Подключение SPOOBK2 к сервисам-->
+		<applications>
+			<application>UKO_UpdateApplicationStatus</application>
+			<application>UKO_ApplicationForConsumerProduct</application>
+			<application>UFS_SrvCheckMoratoriumRefusalForConsumerProduct</application>
+			<application>UFS_SrvChangeAppForConsumerProdStatus</application>
+			<application>SPOOBK2_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>SPOOBK2_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvUpdateApplicationStatus</Service>
+			<Service>ApplicationForConsumerProduct</Service>
+			<Service>SrvCheckMoratoriumRefusalForConsumerProduct</Service>
+			<Service>SrvChangeAppForConsumerProdStatus</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="526202" version="SP-24.000.10" jiraid="ESBKF-3221">
+		<!--Обращение к сервису Hunter-->
+		<applications>
+			<application>Hunter_SrvOnlineMatching</application>
+			<application>Hunter_SrvOnlineMatchingChange</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvOnlineMatching</Service>
+			<Service>SrvOnlineMatchingChange</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="536006" version="SP-24.000.09" jiraid="ESBKF-2938">
+		<!--Подключение ДомКлик к сервису SrvGetClientExtendedRate-->
+		<applications>
+			<application>DC_MQAdapter</application>
+			<application>UpdateCache</application>
+			<application>MC_SrvGetClientExtendedRate</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetClientExtendedRate</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="479596" version="SP-24.000.08" jiraid="ESBKF-2514">
+		<!-- Доработка КСШ КФ в рамках проекта Онлайн антифрод этап 1-->
+		<applications>
+			<application>OD_SrvGetGraphAnalyze</application>
+			<application>OD_MQAdapter</application>
+			<application>ECH_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>OD_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvGetGraphAnalyze</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="538048" version="SP-24.000.07" jiraid="ESBKF-2993">
+		<!--Интеграция с Дом Клик ЦНС. сервис передачи данных по объекту недвижимости-->
+		<system>
+			<tag>GWDB_GW</tag>
+		</system>
+		<applications>
+			<application>RLTSET_SrvSetRealEstateObject</application>
+			<application>RLTST_SrvSetRealEstateObjectStatus</application>
+			<application>DC_MQAdapter</application>
+			<application>TSM_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvSetRealEstateObject</Service>
+			<Service>SrvSetRealEstateObjectStatus</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="531611" version="SP-24.000.06" jiraid="ESBKF-2857">
+		<!--На стороне КСШ КФ необходимо доработать сервис SrvGetClientExtendedRate. Сервис используется для взаимодействия АС СБОФ с АС ОКР.-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+			<application>ECH_RELIABILITY_MQAdapter</application>
+			<application>KKMB_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>ECH_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvGetClientExtendedRate</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="534637" version="SP-24.000.05" jiraid="ESBKF-2880">
+		<!--Доработка механизма маршрутизации ТСМ ->ЕКП(ППРБ.КФЛ): InsuranceCheck-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvTransApprovedApplicationInfo</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="536770" version="SP-24.000.04" jiraid="ESBKF-2952">
+		<!--ДомКлик Включение в схему сервиса SrvCreateApplicationForConsumerProduct информации об партнере и признака сделки-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+		<ServiceList>
+			<Service>ApplicationForConsumerProduct</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="535623" version="SP-24.000.03" jiraid="ESBKF-3530">
+		<!--КФ 2.0 Доработка сервисов КСШ КФ (SrvTransCreditContractInfo). Перевод продукта ПК без обеспечения на ППРБ-->
+		<applications>
+			<application>TRANSCNT_SrvTransCreditContractInfo</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvTransCreditContractInfo</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="526597" version="SP-24.000.02" jiraid="ESBKF-2586">
+		<!--Greenfield для Транзакт-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetClientExtendedRate</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="536947" version="SP-24.000.01" jiraid="ESBKF-2925">
+		<!--Доработка маппинга на КСШ КФ сервиса SRVGetCreditHistory-->
+		<applications>
+			<application>CRH_SrvGetCreditHistoryNBCH</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetCreditHistory</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="528393" version="SP-23.000.12" jiraid="ESBKF-2767">
+		<!--Подключение АС Калита к сервису SrvEvaluateRealty-->
+		<applications>
+			<application>KLT_MQAdapter</application>
+			<application>SRG_SrvEvaluateRealty</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>KLT_GW</tag>
+			<tag>NL_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvEvaluateRealty</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="532819" version="SP-23.000.11" jiraid="ESBKF-2849">
+		<!--Переключение КСШ КФ на новую точку интеграции с КСШ ФС -->
+		<system>
+			<tag>FS_GW</tag>
+			<tag>NL_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SendRate</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="518688" version="SP-23.000.10" jiraid="ESBKF-2507">
+		<!--Оформление рефина в СБОЛ-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+			<application>UKO_InitiateConsumerProductOffer</application>
+			<application>UKO_NotifyConsumerProductOfferResult</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetClientExtendedRate</Service>
+			<Service>InitiateConsumerProductOffer</Service>
+			<Service>NotifyConsumerProductOfferResult</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="523973" version="SP-23.000.09" jiraid="ESBKF-2584">
+		<!--Передача статуса заявки в бизнес мониторинг МБП-->
+		<applications>
+			<application>UKO_UpdateApplicationStatus</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvUpdateApplicationStatus</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="526119" version="SP-23.000.08" jiraid="ESBKF-2726">
+		<!--Доработка КСШ КФ по задаче Кредит на рефинансирование в СБОЛ (без КП)-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+			<application>UKO_UpdateApplicationStatus</application>
+		</applications>
+		<ServiceList>
+			<Service>ApplicationForConsumerProduct</Service>
+			<Service>SrvUpdateApplicationStatus</Service>
+		</ServiceList>
+	</rfc>
+	<rfc version="SP-23.000.07" jiraid="ESBKF-1147">
+		<!--ЕФС Поиск кредитной заявки клиента-->
+		<applications>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc number="522420" version="SP-23.000.06" jiraid="ESBKF-2654">
+		<!--Интеграция АС Залоги с КСШ КФ через ППРБ ИМ, этап1-->
+		<applications>
+			<application>SRG_SrvEvaluateRealty</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>ZLG_GW</tag>
+			<tag>NL_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvEvaluateRealty</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="518638" version="SP-23.000.05" jiraid="ESBKF-2539">
+		<!--Доработка механизма маршрутизации ТСМ ->ЕКП(ППРБ.КФЛ)-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvTransApprovedApplicationInfo</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="523719" version="SP-23.000.04" jiraid="ESBKF-2668">
+		<!--BugFix исправление сервиса SrvCalcClientCreditRating-->
+		<applications>
+			<application>PPRB_SrvCalcClientCreditRating</application>
+			<application>UpdateCache</application>
+			<application>ERIB_MQAdapter</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvCalcCreditRating</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="480785" version="SP-23.000.03" jiraid="ESBKF-1347">
+		<!--КФ 2.0 Перевод продукта ПК без обеспечения на ППРБ-->
+		<applications>
+			<application>SM_SrvGetStrategySM</application>
+			<application>MC_SrvGetClientExtendedRate</application>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+			<application>TRANSCNT_SrvTransCreditContractInfo</application>
+			<application>UpdateCache</application>
+			<application>PPRB_MQAdapter</application>
+			<application>ECH_RATE_MQAdapter</application>
+		</applications>
+		<system>
+			<tag>PPRB_GW</tag>
+			<tag>NL_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvGetStrategySM</Service>
+			<Service>SrvGetClientExtendedRate</Service>
+			<Service>SrvTransApprovedApplicationInfo</Service>
+			<Service>SrvTransCreditContractInfo</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="490112" version="SP-23.000.02" jiraid="ESBKF-1279">
+		<!--Изменение формата запроса к поставщикам ЕСИВ/mail.ru-->
+		<applications>
+			<application>OSS_SrvGetMobilRating</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetExternalScoreRate</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="492761" version="SP-23.000.01" jiraid="ESBKF-1605">
+		<!--Новые правила взаимодействия с ЕФС-->
+		<applications>
+			<application>UFS_SrvCheckMoratoriumRefusalForConsumerProduct</application>
+			<application>UFS_SrvChangeAppForConsumerProdStatus</application>
+			<application>UKO_ApplicationForConsumerProduct</application>
+			<application>UKO_NewApp</application>
+			<application>UKO_NotifyConsumerProductOfferResult</application>
+			<application>UKO_UpdateApplicationStatus</application>
+			<application>UKO_InitiateConsumerProductOffer</application>
+			<application>TSM_MQAdapter</application>>
+            <application>UFS_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>UFS_GW</tag>
+			<tag>NL_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvCheckMoratoriumRefusalForConsumerProduct</Service>
+			<Service>SrvChangeAppForConsumerProdStatus</Service>
+			<Service>SrvSearchApplicationForConsumerProduct</Service>
+			<Service>ApplicationForConsumerProduct</Service>
+			<Service>NewApp</Service>
+			<Service>NotifyConsumerProductOfferResult</Service>
+			<Service>SrvUpdateApplicationStatus</Service>
+			<Service>InitiateConsumerProductOffer</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="518494" version="SP-22.000.22" jiraid="ESBKF-2545">
+		<!--Не передается блок blockDataASSD-->
+		<applications>
+			<application>CRHSCR_SrvGetCreditHistoryScoring002</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetCreditHistoryScoring</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="507335" version="SP-22.000.21" jiraid="ESBKF-2178">
+		<!--Передача признаков СЭР и Молодая семья-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+		<ServiceList>
+			<Service>ApplicationForConsumerProduct</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="508570" version="SP-22.000.20" jiraid="ESBKF-2131"/>
+	<!--Доработать сервис SrvTransApprovedApplicationInfo. Поле MDPresent (SMETrust.xsd и SMEExpress.xsd) сделать необязательным-->
+	<rfc number="504586" version="SP-22.000.19" jiraid="ESBKF-1967">
+		<!--SrvConsumerCardStatus добавить нового потребителя ППРБ.ИМ-->
+		<applications>
+			<application>PPRB_MQAdapter</application>
+			<application>UKO_SrvConsumerCardStatus</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvConsumerCardStatus</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="500730" version="SP-22.000.18" jiraid="ESBKF-1836">
+		<!--Оркестровщик передает в ETSM нотификацию о результате исполнения бизнес сервиса создания договора в ППРБ"-->
+		<applications>
+			<application>PPRB_MQAdapter</application>
+			<application>UFS_SrvChangeAppForConsumerProdStatus</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvChangeAppForConsumerProdStatus</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="500801" version="SP-22.000.17" jiraid="ESBKF-1900">
+		<!--Добавление признака "Работодатель является дочерней компанией"-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetClientExtendedRate</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="498049" version="SP-22.000.16" jiraid="ESBKF-1386">
+		<!--Новый блок полей POSCredit-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+			<application>MC_SrvGetClientExtendedRate</application>
+		</applications>
+		<ServiceList>
+			<Service>ApplicationForConsumerProduct</Service>
+			<Service>SrvGetClientExtendedRate</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="437938" version="SP-22.000.15" jiraid="ESBKF-874">
+		<!--Трансформация Северного и Западно-Уральского территориальных банков (Трансформация СевБ и ЗУБ)-->
+		<applications>
+			<application>SLR_SrvGetAccountSalaryAmount</application>
+			<application>SLR_SrvGetAccountSalaryAmount001</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetAccountSalaryAmount</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="500935" version="SP-22.000.14" jiraid="ESBKF-1813">
+		<!--Новое поле SetelemSendApprovalFlag в сервисе создания заявки-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvCreateApplicationForConsumerProduct</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="506394" version="SP-22.000.13" jiraid="ESBKF-2080">
+		<!--Пустой патч для проверки devops-->
+		<applications>
+			<application>Dummy_app</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+		</ServiceList>
+	</rfc>
+	<rfc number="499928" version="SP-22.000.12" jiraid="ESBKF-1748">
+		<!--Ипотека ЕФС Доработка для Рефинов-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvCreateApplicationForConsumerProduct</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="495447" version="SP-22.000.11" jiraid="ESBKF-1003">
+		<!--Изменение логики взаимодействия TSM-CRM-->
+		<applications>
+			<application>APRCRD_SrvCardApproveInfo</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvCardApproveInfo</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="445722" version="SP-22.000.10" jiraid="ESBKF-1710">
+		<!--Кредиты ФЛ ППРБ: маршрутизация-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvTransApprovedApplicationInfo</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="396049" version="SP-22.000.09" jiraid="ESBKF-125">
+		<!--Перенос операции запроса приходов по счету за определенную дату на сервисный слой-->
+		<applications>
+			<application>SLR_SrvGetAccountSalaryAmount</application>
+			<application>SLR_SrvGetAccountSalaryAmount001</application>
+			<application>UpdateCache</application>
+			<!--application>UpdateCache</application>
+            <application>TSM_SOAPInputAdapter</application>
+            <application>TSM_MQAdapter</application>
+            <application>TSM_SOAPOutputAdapter</application>
+            <application>ECH_MQAdapter</application-->
+		</applications>
+		<ServiceList>
+			<Service>SrvGetAccountSalaryAmount</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="491085" version="SP-22.000.08" jiraid="ESBKF-1203">
+		<!--Перенос операции запроса приходов по счету за определенную дату на сервисный слой-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvCreateApplicationForConsumerProduct</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="437266" version="SP-22.000.07" jiraid="ESBKF-1709">
+		<!--Кредиты ФЛ ППРБ-->
+		<applications>
+			<application>PPRB_MQAdapter</application>
+			<application>UKO_UpdateApplicationStatus</application>
+			<application>NTRCRT_SrvBankRegistrationCertificate</application>
+			<application>NTRNF_SrvBankPledgeNotification</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvUpdateApplicationStatus</Service>
+			<Service>SrvBankRegistrationCertificate</Service>
+			<Service>SrvBankPledgeNotification</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="426800" version="SP-22.000.06" jiraid="ESBKF-866">
+		<!--Миграция Стоп-Лист в ППРБ-->
+		<applications>
+			<application>STOPLIST_SrvCheckParties</application>
+			<application>STOPLIST_SrvCheckParties001</application>
+			<!--application>TSM_SOAPInputAdapter</application>
+            <application>TSM_MQAdapter</application>
+            <application>TSM_SOAPOutputAdapter</application>
+            <application>ECH_MQAdapter</application>
+            <application>APKKB_MQAdapter</application>
+            <application>INFOBANK_MQAdapter</application-->
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvCheckParties</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="498246" version="SP-22.000.05" jiraid="ESBKF-1519">
+		<!--ДомКлик - тикет на обновление статуса кредитной заявки StatusLoanApplicationRs-->
+		<applications>
+			<application>UKO_UpdateApplicationStatus</application>
+			<application>DC_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvUpdateApplicationStatus</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="488868" version="SP-22.000.04" jiraid="ESBKF-1294">
+		<!--Оферта-->
+		<applications>
+			<application>UKO_NotifyConsumerProductOfferResult</application>
+			<application>UpdateCache</application>
+			<application>UFS_MQAdapter</application>
+		</applications>
+		<ServiceList>
+			<Service>NotifyConsumerProductOfferResult</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="496857" version="SP-22.000.03" jiraid="ESBKF-1324">
+		<!--К7М-->
+		<applications>
+			<application>CRH_SrvGetCreditHistoryASSD</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetCreditHistory</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="495959" version="SP-22.000.02" jiraid="ESBKF-1454">
+		<!--ЕФС Ипотека-->
+		<applications>
+			<application>UFS_MQAdapter</application>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvCreateApplicationForConsumerProduct</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="493617" version="SP-22.000.01" jiraid="ESBKF-1334">
+		<!--Маскирование для ДомКлик-->
+		<applications>
+			<application>DC_MQAdapter</application>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvCreateApplicationForConsumerProduct</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="434036" version="SP-21.000.01" jiraid="ESBKF-560">
+		<!--Рейтинг для Сетелем-->
+		<applications>
+			<application>PPRB_MQAdapter</application>
+			<application>ECH_RATE_MQAdapter</application>
+			<application>CETELEM_MQAdapter</application>
+			<application>PPRB_SrvCalcClientCreditRating001</application>
+			<application>PPRB_SrvCalcClientCreditRating</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>GWDB_GW</tag>
+			<tag>ECH_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvCalcClientCreditRating</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="436987" version="SP-21.000.02" jiraid="ESBKF-523">
+		<!--Персональный финансовый менеджер с учетом риск-профиля клиента-->
+		<applications>
+			<application>PFM_SrvCalcPrivateCashFlowForPFM</application>
+			<application>PFM_SrvCalcPrivateGoalForPFM</application>
+			<application>PFM_SrvCalcPrivatePlanForPFM</application>
+			<application>ECH_PFM_MQAdapter</application>
+			<application>PPRB_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvCalcPrivateCashFlowForPFM</Service>
+			<Service>SrvCalcPrivateGoalForPFM</Service>
+			<Service>SrvCalcPrivatePlanForPFM</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="441120" version="SP-21.000.03" jiraid="">
+		<!--Отказ от 2-НДФЛ. Дополнительный источник WAY4-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetClientExtendedRate</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="439329" version="SP-21.000.04" jiraid="ESBKF-691">
+		<!--Исключение поручителя ФЛ в сделках по ЮЛ-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvTransApprovedApplicationInfo</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="442076" version="SP-21.000.05" jiraid="ESBKF-634">
+		<!--Порядок учёта просроченной задолженности БКИ «Эквифакс»-->
+		<applications>
+			<application>CRH_SrvGetCreditHistoryGPSK</application>
+			<application>CRH_SrvGetCreditHistoryGPSK002</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>SERVICE_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvGetCreditHistory</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="440206" version="SP-21.000.06" jiraid="ESBKF-958">
+		<!--ЕФС Кредиты ФЛ. Фаза 2-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+			<application>UKO_UpdateApplicationStatus</application>
+			<application>UpdateCache</application>
+			<application>UFS_MQAdapter</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvCreateApplicationForConsumerProduct</Service>
+			<Service>SrvUpdateApplicationStatus</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="387930" version="SP-21.000.09" jiraid="ESBKF-88">
+		<!--АРМ Управления маршрутами и кешем для КСШ КФ-->
+		<system>
+			<tag>ARM_GW</tag>
+			<tag>ARM_EL</tag>
+			<tag>ARM_DI</tag>
+			<tag>ARM_ADP</tag>
+			<tag>ARM_WAS</tag>
+		</system>
+		<applications>
+			<application>HadoopEventLogger</application>
+			<application>HadoopTransactionLogger</application>
+		</applications>
+		<ServiceList>
+			<Service>EventLogger</Service>
+			<Service>TransactionLogger</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="422183" version="SP-21.000.10" jiraid="ESBKF-400"/>
+	<!--Перевод на легкую платформу. Обеспечить перевод КСШ КФ на легкую платформу x86.-->
+	<rfc number="437651" version="SP-21.000.11" jiraid=""/>
+	<!--Кредиты ППРБ ФЛ-->
+	<rfc number="462368" version="SP-21.000.13" jiraid="">
+		<!--ЦНС Доработка КСШ КФ для подключения Шлюза ДЗО-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+			<application>UKO_UpdateApplicationStatus</application>
+			<application>DC_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>GWDB_GW</tag>
+		</system>
+		<ServiceList>
+			<Service>SrvCreateApplicationForConsumerProduct</Service>
+			<Service>SrvUpdateApplicationStatus</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="375401" version="SP-21.000.14" jiraid=""/>
+	<!--Кредитный потенциал. КСШ КФ-->
+	<rfc number="386497" version="SP-21.000.15" jiraid=""/>
+	<!--Карты1-->
+	<rfc number="408588" version="SP-21.000.16" jiraid="">
+		<!--Кредиты ФЛ. Фаза 1-->
+		<applications>
+			<application>SAFI_SrvInitiateClientImageAnalis</application>
+			<application>UFS_SrvChangeAppForConsumerProdStatus</application>
+			<application>UKO_UpdateApplicationStatus</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvInitiateClientImageAnalis</Service>
+			<Service>SrvChangeAppForConsumerProdStatus</Service>
+			<Service>SrvUpdateApplicationForConsumerProductStatus</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="420828" version="SP-21.000.17" jiraid="ESBKF-1143">
+		<!--Сервис запроса наличия сработавших правил при оценки фотографий-->
+		<applications>
+			<application>SAFI_SrvCheckClientImageAnalis</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvCheckClientImageAnalis</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="478413" version="SP-21.000.18" jiraid="">
+		<!--ЕФС Ипотека подключение к УВ-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+			<application>UFS_MQAdapter</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetClientExtendedRate</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="464732" version="SP-21.000.19" jiraid="ESBKF-1067">
+		<!--Новые данные БКИ-->
+		<applications>
+			<application>CRH_SrvGetCreditHistoryEI</application>
+			<application>CRH_SrvGetCreditHistoryGPSK</application>
+			<application>CRH_SrvGetCreditHistoryGPSK002</application>
+			<application>CRH_SrvGetCreditHistoryNBCH</application>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvGetCreditHistory</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="485146" version="SP-21.000.20" jiraid="ESBKF-1205">
+		<!--Доработки КЕДР-->
+		<applications>
+			<application>SELLCRH_SrvSellCreditHistory</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvSellCreditHistory</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="411989" version="SP-21.000.21" jiraid="ESBKF-504">
+		<!--ЕФС Ипотека-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+			<application>UKO_UpdateApplicationStatus</application>
+			<application>UpdateCache</application>
+			<application>CRM_MQAdapter</application>
+			<application>ERIB_MQAdapter</application>
+			<application>FSB_MQAdapter</application>
+			<application>HABBL_MQAdapter</application>
+			<application>UFS_MQAdapter</application>
+			<application>DC_MQAdapter</application>
+			<application>TSM_SOAPInputAdapter</application>
+			<application>TSM_MQAdapter</application>
+			<application>PPRB_MQAdapter</application>
+			<application>UCx_MQAdapter</application>
+			<application>TSM_SOAPOutputAdapter</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvCreateApplicationForConsumerProduct</Service>
+			<Service>SrvUpdateApplicationStatus</Service>
+		</ServiceList>
+	</rfc>
+	<rfc number="999999" version="SP-21.000.99" jiraid="ESBKF-504">
+		<!--Тестирование DevOps-->
+		<applications>
+			<application>UpdateCache</application>
+		</applications>
+		<ServiceList>
+			<Service>SrvUpdateCache</Service>
+		</ServiceList>
+	</rfc>
+</config>

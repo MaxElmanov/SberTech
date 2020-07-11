@@ -1,0 +1,91 @@
+<config>
+	<rfc version="SP-32.000.15" jiraid="ESBKF-6066">
+		<!--Добавление полей ответа, запроса. АС Стоплист. ECH, TSM-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+			<application>UKO_InitiateConsumerProductOffer</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.14" jiraid="ESBKF-6570">
+		<!--Предоставление прав ТУЗ dynatraceusr-->
+		<system>
+			<tag>TSM_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-32.000.13" jiraid="ESBKF-6574">
+		<!--Создание канала и очереди. Запрос из ОКР в WAY4/ППРБ-->
+		<applications>
+			<application>UpdateCache</application>
+		</applications>
+		<system>
+			<tag>PPRB_GW</tag>
+		</system>
+	</rfc>
+	<rfc version="SP-32.000.12" jiraid="ESBKF-6111">
+		<!--Реализация услуги "Пропуск 1-ого платежа"-->
+		<applications>
+			<application>UKO_InitiateConsumerProductOffer</application>
+			<application>UKO_NotifyConsumerProductOfferResult</application>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.11" jiraid="ESBKF-6169">
+		<!--Агрегатор POS-кредитов взаимодействие с Сетелем-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.10" jiraid="ESBKF-6369">
+		<!--Доработка мапинга сервисов UKO_ApplicationForConsumerProduct,UKO_UpdateApplicationStatus  в рамках задачи ESBKF-6369-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+			<application>UKO_UpdateApplicationStatus</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.09" jiraid="ESBKF-6116">
+		<!--Изменения атрибутивного состава заявления-офферты и ссуды-->
+		<applications>
+			<application>UKO_ApplicationForConsumerProduct</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.08" jiraid="ESBKF-5905">
+		<!--SrvTransApprovedApplicationInfo Передача из СБОФ в ЕКС заявки по технологии кредитный конвейер-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.07" jiraid="ESBKF-6272">
+		<!--Доработка мапинга сервиса UKO_UpdateApplicationStatus-->
+		<applications>
+			<application>UKO_UpdateApplicationStatus</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.06" jiraid="ESBKF-6053">
+		<!--SLR_SrvGetAccountSalaryAmount USVBO Json-->
+		<applications>
+			<application>SLR_SrvGetAccountSalaryAmount</application>
+			<application>USVBO_RestRequestAdapter</application>
+			<application>UKO_NotifyConsumerProductOfferResult</application>
+			<application>UpdateCache</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.05" jiraid="ESBKF-6039">
+		<!--Расширение сервисов Антифрод на КСШ для Кредитного Потенциала-->
+		<applications>
+			<application>GFS_SrvGetFraudScore</application>
+			<application>MMZ_SrvCheckRetailApplicationForSocialFraud</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.04" jiraid="ESBKF-6077">
+		<!--Расширяется атрибутный состав сообщения запроса от ETSM Ret в ЕКП-->
+		<applications>
+			<application>TRANSAPP_SrvTransApprovedApplicationInfo</application>
+		</applications>
+	</rfc>
+	<rfc version="SP-32.000.03" jiraid="ESBKF-6071">
+		<!--Расширение формата ответа от ОКР в Транзакт в RRE (Кефир). Сервис SrvGetClientExtendedRate-->
+		<applications>
+			<application>MC_SrvGetClientExtendedRate</application>
+		</applications>
+	</rfc>
+</config>
