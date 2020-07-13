@@ -2,7 +2,7 @@ package ru.ksh.patchanalyzer.constants;
 
 public enum Constants
 {
-    RFC("rfc"), JIRAID("jiraid"), APPLICATIONS("applications"), APPLICATION("application");
+    RFC("rfc"), JIRAID("jiraid"), VERSION("version"), APPLICATIONS("applications"), APPLICATION("application"), UPDATECACHE("UpdateCache");
 
     private String name;
 

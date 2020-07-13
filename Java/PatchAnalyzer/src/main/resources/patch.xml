@@ -474,7 +474,7 @@
 			<application>UpdateCache</application>
 		</applications>
 	</rfc>
-	<rfc version="SP-29.000.05" jiraid="ESBKF-5009">
+	<rfc version="SP-29.000.0" jiraid="ESBKF-5009">
 		<!--Доработка SrvTransApprovedApplicationInfo добавление поля channel-->
 		<applications>
 			<application>TRANSCARD_SrvTransApprovedCardInfo</application>

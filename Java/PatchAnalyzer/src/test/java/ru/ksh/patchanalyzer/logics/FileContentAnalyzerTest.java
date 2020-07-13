@@ -40,4 +40,21 @@ public class FileContentAnalyzerTest
 
         Assert.assertEquals(expected, actual);
     }
+
+    /**
+     * test @{version} tag in pathc2.xml
+     * with invalid context, without the tag, with empty content
+     */
+    @Test
+    public void getResult3()
+    {
+        String jiraid = "ESBKF-6066";
+        String pathToPatchXmlFile = FileContentAnalyzerTest.class.getClassLoader().getResource("patch2.xml").getFile();
+
+        String actual = FileContentAnalyzer.getResult(jiraid, pathToPatchXmlFile);
+
+        String expected = "ESBKF-6101, ESBKF-6001";
+
+        Assert.assertEquals(expected, actual);
+    }
 }

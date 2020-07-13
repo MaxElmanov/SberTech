@@ -10,7 +10,9 @@ import ru.ksh.patchanalyzer.constants.Constants;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Objects;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class FileContentAnalyzer
@@ -35,7 +37,7 @@ public class FileContentAnalyzer
         Element rootElement = document.getRootElement();
         //endregion
 
-        List<String> servicesNames = getCurrentPatchServicesNames(jiraid, rootElement);
+        List<String> ourServicesNames = getCurrentPatchServicesNames(jiraid, rootElement);
 
         StringBuilder resultBuilder = new StringBuilder();
 
@@ -43,15 +45,21 @@ public class FileContentAnalyzer
         {
             for (Element rfc : rootElement.getChildren(Constants.RFC.getName()))
             {
-                //if attribute "jiraid" doesn't exist
+                //if attribute "jiraid" and "version" doesn't exist
                 Attribute jiraidAttr = rfc.getAttribute(Constants.JIRAID.getName());
-                if(Objects.isNull(jiraidAttr)) continue;
+                Attribute versionAttr = rfc.getAttribute(Constants.VERSION.getName());
+                if(Objects.isNull(jiraidAttr) || Objects.isNull(versionAttr)) continue;
 
                 //if attribute "jiraid" is empty or equals null
                 if(Objects.isNull(jiraidAttr.getValue()) || jiraidAttr.getValue().isEmpty()) continue;
+                //if attribute "version" is empty or equals null
+                if(Objects.isNull(versionAttr.getValue()) || versionAttr.getValue().isEmpty()) continue;
 
-                String rfcAttr = rfc.getAttribute(Constants.JIRAID.getName()).getValue();
-                if (Objects.nonNull(rfcAttr) && !rfcAttr.isEmpty() && !rfcAttr.equalsIgnoreCase(jiraid))
+                String jiraidAttrValue = rfc.getAttribute(Constants.JIRAID.getName()).getValue();
+                String versionAttrValue = rfc.getAttribute(Constants.VERSION.getName()).getValue();
+                if (!Pattern.compile("SP-[0-9]{2}.[0-9]{3}.[0-9]{2}").matcher(versionAttrValue).matches()) continue;
+
+                if (!jiraidAttrValue.equalsIgnoreCase(jiraid) && Objects.nonNull(jiraidAttrValue) && !jiraidAttrValue.isEmpty() && Objects.nonNull(versionAttrValue) && !versionAttrValue.isEmpty())
                 {
                     if (Objects.nonNull(rfc.getChild(Constants.APPLICATIONS.getName())))
                     {
@@ -63,14 +71,10 @@ public class FileContentAnalyzer
                             {
                                 String serviceName = application.getValue();
 
-                                out2:
-                                for (String currentServiceName : servicesNames)
+                                if (ourServicesNames.contains(serviceName))
                                 {
-                                    if (serviceName.equalsIgnoreCase(currentServiceName))
-                                    {
-                                        resultBuilder.append(rfcAttr + ", ");
-                                        break out1;
-                                    }
+                                    resultBuilder.append(jiraidAttrValue + ", ");
+                                    break out1;
                                 }
                             }
                         }
@@ -79,7 +83,8 @@ public class FileContentAnalyzer
             }
         }
 
-        return resultBuilder.toString().substring(0, resultBuilder.length() - 2);
+        String resultString = resultBuilder.toString();
+        return resultString.isEmpty() ? null : resultString.substring(0, resultBuilder.length() - 2);
     }
 
     private static List<String> getCurrentPatchServicesNames(String jiraid, Element rootElement)
@@ -88,15 +93,25 @@ public class FileContentAnalyzer
 
         if (Objects.nonNull(jiraid) && Objects.nonNull(rootElement))
         {
-            Element currentRfc = rootElement.getChildren(Constants.RFC.getName())
-                                            .stream()
-                                            .filter(rfc -> rfc.getAttribute(Constants.JIRAID.getName()).getValue().equalsIgnoreCase(jiraid))
-                                            .findFirst()
-                                            .get();
+            Element currentRfc = null;
+
+            try
+            {
+                currentRfc = rootElement.getChildren(Constants.RFC.getName())
+                                                .stream()
+                                                .filter(rfc -> rfc.getAttribute(Constants.JIRAID.getName()).getValue().equalsIgnoreCase(jiraid))
+                                                .findFirst()
+                                                .get();
+            }
+            catch (NoSuchElementException e){
+                System.out.println("Invalid jiraid");
+                System.exit(-1);
+            }
 
             servicesNames = currentRfc.getChild(Constants.APPLICATIONS.getName())
                                              .getChildren(Constants.APPLICATION.getName())
                                              .stream()
+                                             .filter(app -> !app.getValue().equalsIgnoreCase(Constants.UPDATECACHE.getName()))
                                              .map(app -> app.getValue())
                                              .collect(Collectors.toList());
         }
